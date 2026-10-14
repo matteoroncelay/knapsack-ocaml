@@ -1,9 +1,10 @@
 open Knapsack.Instance
 
 let test nom inst =
-  Printf.printf "%s : capacite %d, %d objets, glouton = %d\n"
+  Printf.printf "%s : capacite %d, %d objets, glouton = %d, optimum = %d\n"
     nom inst.capacity (Array.length inst.items)
     (Knapsack.Greedy.solve inst)
+    (Knapsack.Dynprog.solve inst)
 
 let () =
   let inst = {
