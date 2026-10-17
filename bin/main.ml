@@ -1,10 +1,11 @@
 open Knapsack.Instance
 
 let test nom inst =
-  Printf.printf "%s : capacite %d, %d objets, glouton = %d, optimum = %d\n"
+  Printf.printf "%s : capacite %d, %d objets, glouton = %d, dynamique = %d, bnb = %d\n"
     nom inst.capacity (Array.length inst.items)
     (Knapsack.Greedy.solve inst)
     (Knapsack.Dynprog.solve inst)
+    (Knapsack.Bnb.solve inst)
 
 let () =
   let inst = {
@@ -19,5 +20,17 @@ let () =
                { weight = 5; value = 5 };
                { weight = 5; value = 5 } |]
   } in
-  test "exemple" inst;
-  test "contre-exemple" inst2
+  let inst3 = {
+    capacity = 5;
+    items = [| { weight = 2; value = 9 };
+               { weight = 6; value = 6 };
+               { weight = 4; value = 3 } |]
+  } in
+  let inst4 = {
+    capacity = 2;
+    items = [| { weight = 1; value = 2 } |]
+  } in
+  test "test1" inst;
+  test "test2" inst2;
+  test "test3" inst3;
+  test "test4" inst4
