@@ -21,6 +21,6 @@ let ()=
   Printf.printf "Graine : %d\n" graine;
   Random.init graine;
   recursion 100000 20 10 10 5;
-  Printf.printf "recursion ~tour:100000 ~capacitemax:20 ~poidsmax:10 ~valmax:10 ñbovjetmax:5 reussi\n";
+  Printf.printf "recursion ~tour:100000 ~capacitemax:20 ~poidsmax:10 ~valmax:10 ~nbovjetmax:5 reussi\n";
   recursion 10000 40 10 10 10;
-  Printf.printf "recursion tour:10000 ~~capacitemax:40 poidsmax:10 ~valmax:10 ñbovjetmax:10 reussi\n"
+  Printf.printf "recursion tour:10000 ~capacitemax:40 poidsmax:10 ~valmax:10 ~nbovjetmax:10 reussi\n"
