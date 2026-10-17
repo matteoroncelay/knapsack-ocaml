@@ -30,7 +30,14 @@ let () =
     capacity = 2;
     items = [| { weight = 1; value = 2 } |]
   } in
+  let inst5 = {
+    capacity = 10;
+    items = [| { weight = 6; value = 12 };
+               { weight = 5; value = 5 };
+               { weight = 4; value = 3 } |]
+  } in
   test "test1" inst;
   test "test2" inst2;
   test "test3" inst3;
-  test "test4" inst4
+  test "test4" inst4;
+  test "test4" inst5
